@@ -25,6 +25,17 @@ const config = {
     'bg-success/30',
     'border-warning',
     'bg-warning/30',
+    // Construction theme colors
+    'bg-construction-red-500',
+    'bg-construction-red-600',
+    'text-construction-red-500',
+    'border-construction-red-500',
+    'bg-construction-orange-500',
+    'bg-construction-yellow-500',
+    'bg-primary',
+    'text-primary',
+    'border-primary',
+    'hover:bg-primary/90',
   ],
   theme: {
     container: {
@@ -92,6 +103,37 @@ const config = {
         success: 'hsl(var(--success))',
         error: 'hsl(var(--error))',
         warning: 'hsl(var(--warning))',
+        // Construction-themed colors
+        construction: {
+          red: {
+            50: '#fef2f2',
+            100: '#fee2e2',
+            200: '#fecaca',
+            300: '#fca5a5',
+            400: '#f87171',
+            500: '#ef4444', // Main red
+            600: '#dc2626',
+            700: '#b91c1c',
+            800: '#991b1b',
+            900: '#7f1d1d',
+          },
+          orange: {
+            400: '#fb923c',
+            500: '#f97316',
+            600: '#ea580c',
+          },
+          yellow: {
+            400: '#facc15',
+            500: '#eab308',
+          },
+          gray: {
+            50: '#f9fafb',
+            100: '#f3f4f6',
+            200: '#e5e7eb',
+            800: '#1f2937',
+            900: '#111827',
+          },
+        },
       },
       fontFamily: {
         mono: ['var(--font-geist-mono)'],
