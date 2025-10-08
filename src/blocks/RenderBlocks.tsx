@@ -7,6 +7,10 @@ import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { ContentBlock } from '@/blocks/Content/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
+import { MarketingHeroBlock } from '@/blocks/MarketingHero/Component'
+import { MarketingFeaturesBlock } from '@/blocks/MarketingFeatures/Component'
+import { MarketingCTABlock } from '@/blocks/MarketingCTA/Component'
+import { MarketingContactFormBlock } from '@/blocks/MarketingContactForm/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -14,6 +18,10 @@ const blockComponents = {
   cta: CallToActionBlock,
   formBlock: FormBlock,
   mediaBlock: MediaBlock,
+  marketingHero: MarketingHeroBlock,
+  marketingFeatures: MarketingFeaturesBlock,
+  marketingCTA: MarketingCTABlock,
+  marketingContactForm: MarketingContactFormBlock,
 }
 
 export const RenderBlocks: React.FC<{

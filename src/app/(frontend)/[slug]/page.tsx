@@ -4,8 +4,8 @@ import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
 import { getPayload, type RequiredDataFromCollectionSlug } from 'payload'
 import { draftMode } from 'next/headers'
-import React, { cache } from 'react'
-import { homeStatic } from '@/endpoints/seed/home-static'
+import { cache } from 'react'
+import { coralRockHomeStatic } from '@/endpoints/seed/coral-rock-static'
 
 import { RenderBlocks } from '@/blocks/RenderBlocks'
 import { RenderHero } from '@/heros/RenderHero'
@@ -56,7 +56,11 @@ export default async function Page({ params: paramsPromise }: Args) {
 
   // Remove this code once your website is seeded
   if (!page && slug === 'home') {
-    page = homeStatic
+    // Use Coral Rock static data for home page if no dynamic page found
+    page = coralRockHomeStatic({
+      heroImage: { id: 'placeholder-hero' },
+      metaImage: { id: 'placeholder-meta' },
+    } as any)
   }
 
   if (!page) {

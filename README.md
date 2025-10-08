@@ -1,14 +1,30 @@
-# Payload Website Template
+# CoralRock Payload CMS Template
 
-This is the official [Payload Website Template](https://github.com/payloadcms/payload/blob/main/templates/website). Use it to power websites, blogs, or portfolios from small to enterprise. This repo includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website.
+This is a company template based on the official [Payload Website Template](https://github.com/payloadcms/payload/blob/main/templates/website). It's designed for creating client websites where developers build the technical infrastructure and clients manage content through the Payload admin panel.
 
-This template is right for you if you are working on:
+## 🚀 For Developers
 
-- A personal or enterprise-grade website, blog, or portfolio
-- A content publishing platform with a fully featured publication workflow
-- Exploring the capabilities of Payload
+**IMPORTANT: Read the [Payload Development Instructions](./PAYLOAD-INSTRUCTIONS.md) before starting any development work.**
 
-Core features:
+**VS Code Users**: GitHub Copilot will automatically follow the custom instructions in `.github/copilot-instructions.md` which include file-specific guidance for working with this template.
+
+This template follows specific patterns and best practices for our company workflow. The instructions cover:
+
+- Payload CMS architecture and patterns
+- Collection and block development guidelines
+- Content management workflows
+- Security and access control
+- Deployment procedures
+
+## 🎯 Template Purpose
+
+This template is designed for:
+
+- **Developers**: Build the technical foundation, components, and CMS structure
+- **Clients**: Manage content, text, images, and basic layout through the admin panel
+- **Goal**: Create websites where clients can independently update content without developer intervention
+
+## Core Features
 
 - [Pre-configured Payload Config](#how-it-works)
 - [Authentication](#users-authentication)

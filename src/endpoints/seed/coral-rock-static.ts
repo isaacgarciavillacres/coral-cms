@@ -1,0 +1,495 @@
+import type { RequiredDataFromCollectionSlug } from 'payload'
+import type { Media } from '@/payload-types'
+
+type CoralRockHomeArgs = {
+  heroImage: Media
+  metaImage: Media
+}
+
+// Coral Rock Construction homepage content
+export const coralRockHomeStatic: (
+  args: CoralRockHomeArgs,
+) => RequiredDataFromCollectionSlug<'pages'> = ({ heroImage, metaImage }) => ({
+  slug: 'home',
+  _status: 'published',
+  hero: {
+    type: 'highImpact',
+    richText: {
+      root: {
+        type: 'root',
+        children: [
+          {
+            type: 'heading',
+            children: [
+              {
+                type: 'text',
+                text: 'Welcome to Coral Rock Construction',
+                format: 0,
+                detail: 0,
+                mode: 'normal',
+                style: '',
+                version: 1,
+              },
+            ],
+            direction: 'ltr',
+            format: '',
+            indent: 0,
+            tag: 'h1',
+            version: 1,
+          },
+          {
+            type: 'heading',
+            children: [
+              {
+                type: 'text',
+                text: "PEI's Trusted Partner for Quality Framing & Construction Services",
+                format: 0,
+                detail: 0,
+                mode: 'normal',
+                style: '',
+                version: 1,
+              },
+            ],
+            direction: 'ltr',
+            format: '',
+            indent: 0,
+            tag: 'h2',
+            version: 1,
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                text: "At Coral Rock Construction, we've built our reputation on Prince Edward Island one solid frame at a time. As a reliable subcontractor serving builders and contractors across the Island, we deliver the craftsmanship and efficiency your projects demand.",
+                format: 0,
+                detail: 0,
+                mode: 'normal',
+                style: '',
+                version: 1,
+              },
+            ],
+            direction: 'ltr',
+            format: '',
+            indent: 0,
+            textFormat: 0,
+            version: 1,
+          },
+        ],
+        direction: 'ltr',
+        format: '',
+        indent: 0,
+        version: 1,
+      },
+    },
+    media: heroImage.id,
+  },
+  layout: [
+    {
+      blockType: 'content',
+      blockName: 'Framing Specialty',
+      columns: [
+        {
+          size: 'full',
+          richText: {
+            root: {
+              type: 'root',
+              children: [
+                {
+                  type: 'heading',
+                  children: [
+                    {
+                      type: 'text',
+                      text: 'Our Specialty: Expert Framing Services',
+                      format: 1,
+                      detail: 0,
+                      mode: 'normal',
+                      style: '',
+                      version: 1,
+                    },
+                  ],
+                  direction: 'ltr',
+                  format: '',
+                  indent: 0,
+                  tag: 'h2',
+                  version: 1,
+                },
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'text',
+                      text: 'Framing is our foundation.',
+                      format: 1,
+                      detail: 0,
+                      mode: 'normal',
+                      style: '',
+                      version: 1,
+                    },
+                    {
+                      type: 'text',
+                      text: ' With years of experience building strong, precise frameworks across PEI, we bring unmatched expertise to every project. From residential homes to commercial builds, our framing crews work with speed and accuracy to keep your project on schedule.',
+                      format: 0,
+                      detail: 0,
+                      mode: 'normal',
+                      style: '',
+                      version: 1,
+                    },
+                  ],
+                  direction: 'ltr',
+                  format: '',
+                  indent: 0,
+                  textFormat: 0,
+                  version: 1,
+                },
+              ],
+              direction: 'ltr',
+              format: '',
+              indent: 0,
+              version: 1,
+            },
+          },
+        },
+      ],
+    },
+    {
+      blockType: 'content',
+      blockName: 'Construction Services',
+      columns: [
+        {
+          size: 'full',
+          richText: {
+            root: {
+              type: 'root',
+              children: [
+                {
+                  type: 'heading',
+                  children: [
+                    {
+                      type: 'text',
+                      text: 'Comprehensive Construction Services',
+                      format: 0,
+                      detail: 0,
+                      mode: 'normal',
+                      style: '',
+                      version: 1,
+                    },
+                  ],
+                  direction: 'ltr',
+                  format: '',
+                  indent: 0,
+                  tag: 'h2',
+                  version: 1,
+                },
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'text',
+                      text: 'While framing is where we shine, Coral Rock offers a full range of quality construction services:',
+                      format: 0,
+                      detail: 0,
+                      mode: 'normal',
+                      style: '',
+                      version: 1,
+                    },
+                  ],
+                  direction: 'ltr',
+                  format: '',
+                  indent: 0,
+                  textFormat: 0,
+                  version: 1,
+                },
+                {
+                  type: 'list',
+                  listType: 'bullet',
+                  start: 1,
+                  tag: 'ul',
+                  children: [
+                    {
+                      type: 'listitem',
+                      children: [
+                        {
+                          type: 'text',
+                          text: 'Framing',
+                          format: 1,
+                          detail: 0,
+                          mode: 'normal',
+                          style: '',
+                          version: 1,
+                        },
+                        {
+                          type: 'text',
+                          text: ' (our specialty) - Residential, commercial, and custom builds',
+                          format: 0,
+                          detail: 0,
+                          mode: 'normal',
+                          style: '',
+                          version: 1,
+                        },
+                      ],
+                      direction: 'ltr',
+                      format: '',
+                      indent: 0,
+                      version: 1,
+                    },
+                    {
+                      type: 'listitem',
+                      children: [
+                        {
+                          type: 'text',
+                          text: 'Foundation Work',
+                          format: 1,
+                          detail: 0,
+                          mode: 'normal',
+                          style: '',
+                          version: 1,
+                        },
+                        {
+                          type: 'text',
+                          text: ' - Solid groundwork for lasting structures',
+                          format: 0,
+                          detail: 0,
+                          mode: 'normal',
+                          style: '',
+                          version: 1,
+                        },
+                      ],
+                      direction: 'ltr',
+                      format: '',
+                      indent: 0,
+                      version: 1,
+                    },
+                    {
+                      type: 'listitem',
+                      children: [
+                        {
+                          type: 'text',
+                          text: 'Drywall Installation',
+                          format: 1,
+                          detail: 0,
+                          mode: 'normal',
+                          style: '',
+                          version: 1,
+                        },
+                        {
+                          type: 'text',
+                          text: ' - Smooth, professional finishing',
+                          format: 0,
+                          detail: 0,
+                          mode: 'normal',
+                          style: '',
+                          version: 1,
+                        },
+                      ],
+                      direction: 'ltr',
+                      format: '',
+                      indent: 0,
+                      version: 1,
+                    },
+                    {
+                      type: 'listitem',
+                      children: [
+                        {
+                          type: 'text',
+                          text: 'Flooring',
+                          format: 1,
+                          detail: 0,
+                          mode: 'normal',
+                          style: '',
+                          version: 1,
+                        },
+                        {
+                          type: 'text',
+                          text: ' - Expert installation for all flooring types',
+                          format: 0,
+                          detail: 0,
+                          mode: 'normal',
+                          style: '',
+                          version: 1,
+                        },
+                      ],
+                      direction: 'ltr',
+                      format: '',
+                      indent: 0,
+                      version: 1,
+                    },
+                    {
+                      type: 'listitem',
+                      children: [
+                        {
+                          type: 'text',
+                          text: 'Painting',
+                          format: 1,
+                          detail: 0,
+                          mode: 'normal',
+                          style: '',
+                          version: 1,
+                        },
+                        {
+                          type: 'text',
+                          text: ' - Interior and exterior, meticulous attention to detail',
+                          format: 0,
+                          detail: 0,
+                          mode: 'normal',
+                          style: '',
+                          version: 1,
+                        },
+                      ],
+                      direction: 'ltr',
+                      format: '',
+                      indent: 0,
+                      version: 1,
+                    },
+                    {
+                      type: 'listitem',
+                      children: [
+                        {
+                          type: 'text',
+                          text: 'General Carpentry',
+                          format: 1,
+                          detail: 0,
+                          mode: 'normal',
+                          style: '',
+                          version: 1,
+                        },
+                        {
+                          type: 'text',
+                          text: ' - Custom solutions and construction support',
+                          format: 0,
+                          detail: 0,
+                          mode: 'normal',
+                          style: '',
+                          version: 1,
+                        },
+                      ],
+                      direction: 'ltr',
+                      format: '',
+                      indent: 0,
+                      version: 1,
+                    },
+                  ],
+                  direction: 'ltr',
+                  format: '',
+                  indent: 0,
+                  version: 1,
+                },
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'text',
+                      text: 'Note: We partner with trusted local electricians and plumbers to provide complete project solutions.',
+                      format: 2,
+                      detail: 0,
+                      mode: 'normal',
+                      style: '',
+                      version: 1,
+                    },
+                  ],
+                  direction: 'ltr',
+                  format: '',
+                  indent: 0,
+                  textFormat: 0,
+                  version: 1,
+                },
+              ],
+              direction: 'ltr',
+              format: '',
+              indent: 0,
+              version: 1,
+            },
+          },
+        },
+      ],
+    },
+    {
+      blockType: 'cta',
+      blockName: 'Contact CTA',
+      richText: {
+        root: {
+          type: 'root',
+          children: [
+            {
+              type: 'heading',
+              children: [
+                {
+                  type: 'text',
+                  text: 'Ready to Build Together?',
+                  format: 0,
+                  detail: 0,
+                  mode: 'normal',
+                  style: '',
+                  version: 1,
+                },
+              ],
+              direction: 'ltr',
+              format: '',
+              indent: 0,
+              tag: 'h2',
+              version: 1,
+            },
+            {
+              type: 'paragraph',
+              children: [
+                {
+                  type: 'text',
+                  text: 'Whether you need a dedicated framing crew for your next development or a versatile subcontractor who can handle multiple trades, Coral Rock Construction adapts to your needs.',
+                  format: 0,
+                  detail: 0,
+                  mode: 'normal',
+                  style: '',
+                  version: 1,
+                },
+              ],
+              direction: 'ltr',
+              format: '',
+              indent: 0,
+              textFormat: 0,
+              version: 1,
+            },
+            {
+              type: 'paragraph',
+              children: [
+                {
+                  type: 'text',
+                  text: "Let's discuss your next project.",
+                  format: 1,
+                  detail: 0,
+                  mode: 'normal',
+                  style: '',
+                  version: 1,
+                },
+              ],
+              direction: 'ltr',
+              format: '',
+              indent: 0,
+              textFormat: 0,
+              version: 1,
+            },
+          ],
+          direction: 'ltr',
+          format: '',
+          indent: 0,
+          version: 1,
+        },
+      },
+      links: [
+        {
+          link: {
+            type: 'custom',
+            url: '/contact',
+            label: 'Contact Us Today',
+          },
+        },
+      ],
+    },
+  ],
+  title: "Coral Rock Construction - PEI's Trusted Construction Partner",
+  meta: {
+    title: "Coral Rock Construction - PEI's Premier Framing & Construction Services",
+    description:
+      'Expert framing and construction services on Prince Edward Island. Reliable subcontractor for builders and contractors. Quality craftsmanship, competitive pricing, Island values.',
+    image: metaImage,
+  },
+})

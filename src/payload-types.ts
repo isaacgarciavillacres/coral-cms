@@ -191,7 +191,17 @@ export interface Page {
       | null;
     media?: (number | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  layout: (
+    | CallToActionBlock
+    | ContentBlock
+    | MediaBlock
+    | ArchiveBlock
+    | FormBlock
+    | MarketingHeroBlock
+    | MarketingFeaturesBlock
+    | MarketingCTABlock
+    | MarketingContactFormBlock
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -745,6 +755,198 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MarketingHeroBlock".
+ */
+export interface MarketingHeroBlock {
+  /**
+   * Choose the visual style for the hero section
+   */
+  variant?: ('default' | 'gradient' | 'highlight') | null;
+  /**
+   * Optional badge/announcement text shown above the title
+   */
+  badge?: string | null;
+  /**
+   * Main headline for the hero section
+   */
+  title: string;
+  /**
+   * Optional subtitle text
+   */
+  subtitle?: string | null;
+  /**
+   * Supporting description text
+   */
+  description: string;
+  primaryAction: {
+    text: string;
+    href: string;
+    variant?: ('default' | 'secondary' | 'outline') | null;
+    showIcon?: boolean | null;
+  };
+  /**
+   * Optional secondary button (typically for demos or videos)
+   */
+  secondaryAction?: {
+    text?: string | null;
+    href?: string | null;
+    variant?: ('default' | 'secondary' | 'outline') | null;
+    showPlayIcon?: boolean | null;
+  };
+  /**
+   * Optional background image for the hero section
+   */
+  backgroundImage?: (number | null) | Media;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'marketingHero';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MarketingFeaturesBlock".
+ */
+export interface MarketingFeaturesBlock {
+  /**
+   * Choose how to display the features
+   */
+  variant?: ('grid' | 'list' | 'cards') | null;
+  /**
+   * Optional title for the features section
+   */
+  title?: string | null;
+  /**
+   * Optional subtitle for the features section
+   */
+  subtitle?: string | null;
+  features?:
+    | {
+        /**
+         * Choose an icon to represent this feature
+         */
+        icon?:
+          | (
+              | 'zap'
+              | 'shield'
+              | 'users'
+              | 'globe'
+              | 'smartphone'
+              | 'clock'
+              | 'star'
+              | 'heart'
+              | 'target'
+              | 'rocket'
+              | 'lock'
+              | 'trending-up'
+            )
+          | null;
+        title: string;
+        description: string;
+        /**
+         * Add a link to learn more about this feature
+         */
+        link?: {
+          text?: string | null;
+          href?: string | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'marketingFeatures';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MarketingCTABlock".
+ */
+export interface MarketingCTABlock {
+  /**
+   * Choose the visual style for the CTA section
+   */
+  variant?: ('default' | 'gradient' | 'card' | 'bordered') | null;
+  /**
+   * Main headline for the CTA section
+   */
+  title: string;
+  /**
+   * Optional subtitle text
+   */
+  subtitle?: string | null;
+  /**
+   * Supporting description text
+   */
+  description?: string | null;
+  primaryAction: {
+    text: string;
+    href: string;
+    variant?: ('default' | 'secondary' | 'outline') | null;
+  };
+  /**
+   * Optional secondary button
+   */
+  secondaryAction?: {
+    text?: string | null;
+    href?: string | null;
+    variant?: ('default' | 'secondary' | 'outline') | null;
+  };
+  /**
+   * Optional background image for the CTA section
+   */
+  backgroundImage?: (number | null) | Media;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'marketingCTA';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MarketingContactFormBlock".
+ */
+export interface MarketingContactFormBlock {
+  /**
+   * Optional title for the contact form section
+   */
+  title?: string | null;
+  /**
+   * Optional subtitle for the contact form section
+   */
+  subtitle?: string | null;
+  /**
+   * Optional description text above the form
+   */
+  description?: string | null;
+  formCfg?: {
+    /**
+     * URL where form submissions should be sent (e.g., /api/contact)
+     */
+    submitUrl?: string | null;
+    showNameField?: boolean | null;
+    showCompanyField?: boolean | null;
+    showPhoneField?: boolean | null;
+    showSubjectField?: boolean | null;
+    /**
+     * Select which fields should be required
+     */
+    reqFields?: ('name' | 'email' | 'company' | 'phone' | 'subject' | 'message')[] | null;
+  };
+  submitButton?: {
+    text?: string | null;
+    loadingText?: string | null;
+    variant?: ('default' | 'secondary' | 'outline') | null;
+  };
+  /**
+   * Message to show after successful form submission
+   */
+  successMessage?: string | null;
+  /**
+   * Choose how to display the contact form
+   */
+  layout?: ('full' | 'two-column' | 'card') | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'marketingContactForm';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1034,6 +1236,10 @@ export interface PagesSelect<T extends boolean = true> {
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
+        marketingHero?: T | MarketingHeroBlockSelect<T>;
+        marketingFeatures?: T | MarketingFeaturesBlockSelect<T>;
+        marketingCTA?: T | MarketingCTABlockSelect<T>;
+        marketingContactForm?: T | MarketingContactFormBlockSelect<T>;
       };
   meta?:
     | T
@@ -1130,6 +1336,118 @@ export interface FormBlockSelect<T extends boolean = true> {
   form?: T;
   enableIntro?: T;
   introContent?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MarketingHeroBlock_select".
+ */
+export interface MarketingHeroBlockSelect<T extends boolean = true> {
+  variant?: T;
+  badge?: T;
+  title?: T;
+  subtitle?: T;
+  description?: T;
+  primaryAction?:
+    | T
+    | {
+        text?: T;
+        href?: T;
+        variant?: T;
+        showIcon?: T;
+      };
+  secondaryAction?:
+    | T
+    | {
+        text?: T;
+        href?: T;
+        variant?: T;
+        showPlayIcon?: T;
+      };
+  backgroundImage?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MarketingFeaturesBlock_select".
+ */
+export interface MarketingFeaturesBlockSelect<T extends boolean = true> {
+  variant?: T;
+  title?: T;
+  subtitle?: T;
+  features?:
+    | T
+    | {
+        icon?: T;
+        title?: T;
+        description?: T;
+        link?:
+          | T
+          | {
+              text?: T;
+              href?: T;
+            };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MarketingCTABlock_select".
+ */
+export interface MarketingCTABlockSelect<T extends boolean = true> {
+  variant?: T;
+  title?: T;
+  subtitle?: T;
+  description?: T;
+  primaryAction?:
+    | T
+    | {
+        text?: T;
+        href?: T;
+        variant?: T;
+      };
+  secondaryAction?:
+    | T
+    | {
+        text?: T;
+        href?: T;
+        variant?: T;
+      };
+  backgroundImage?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MarketingContactFormBlock_select".
+ */
+export interface MarketingContactFormBlockSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  description?: T;
+  formCfg?:
+    | T
+    | {
+        submitUrl?: T;
+        showNameField?: T;
+        showCompanyField?: T;
+        showPhoneField?: T;
+        showSubjectField?: T;
+        reqFields?: T;
+      };
+  submitButton?:
+    | T
+    | {
+        text?: T;
+        loadingText?: T;
+        variant?: T;
+      };
+  successMessage?: T;
+  layout?: T;
   id?: T;
   blockName?: T;
 }
